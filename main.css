@@ -1,0 +1,91 @@
+:root {
+    --background-color: #D1D5DE;
+    --darker-background: #B7B6C2;
+    --secondary-color: #8AAA79;
+    --darker-secondary: #728457;
+    --dark-text: #2b3124;
+}
+
+@font-face {
+    font-family: DM_Serif;
+    src: url(fonts/DM_Serif_Text/DMSerifText-Regular.ttf);
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: DM_Serif;
+    margin: 0px;
+}
+
+h1 {
+    color: var(--dark-text);
+    margin: 0px;
+    padding: 12px;
+}
+
+.banner {
+    background-color: var(--secondary-color);
+    text-align: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    order: 1;
+}
+
+.banner-buttons {
+    background-color: var(--darker-secondary);
+    display: flex;
+    justify-content: space-between;
+    padding: 12px, 0px, 12px, 0px, ;
+}
+
+.navigation-buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    font-family: DM_Serif;
+}
+
+.invisible-link{
+    color: var(--dark-text);
+    text-decoration: none;
+}
+
+/* .link-button {
+    padding: 8px;
+} */
+
+a {
+    padding: 18px;
+    display: inline-block;
+}
+
+a:hover {
+    background-color: var(--secondary-color);
+}
+
+.theme-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 12px;
+    gap: 12px;
+}
+
+select {
+    background-color: white;
+    font-family: DM_Serif;
+    padding: 6px;
+    border-radius: 12px;
+    border-color: var(--dark-text);
+}
+
+#page {
+    position: relative;
+    top: 130px;
+    margin: 0px 80px 80px 80px;
+    z-index: -1;
+}
