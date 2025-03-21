@@ -4,26 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script source="main.js" defer></script>
     <link rel="stylesheet" href="main.css">
     <title>Favorite Favorites</title>
 </head>
 
 <body>
     <div class="banner">
-        <h1>Favorite Favorites</h1>
+        <div id="title">
+            <div>
+                <h1> Favorite Favorites |</h1>
+            </div>
+            <div>
+                <h2>Home</h2>
+            </div>
+        </div>
+
+
         <div class="banner-buttons">
             <div class="theme-buttons">
-                Select a theme: 
+                Select a theme:
                 <select id="theme">
                     <option id="theme-1" value="theme-1">Theme 1</option>
                     <option id="theme-2" value="theme-2">Theme 2</option>
                     <option id="theme-3" value="theme-3">Theme 3</option>
                 </select>
-                
+
             </div>
             <div class="navigation-buttons">
                 <div class="link-button">
-                    <a href="index.html" class="invisible-link">
+                    <a href="index.html" class="invisible-link" data-on-page="true">
                         Home
                     </a>
                 </div>
@@ -36,7 +46,16 @@
         </div>
     </div>
     <div id="page">
-       
+        <div>
+            <h2>
+                Random Image
+            </h2>
+
+        </div>
+        <div id="image-div">
+            <img id="random" src="static/cake.jpg" , alt="image" />
+            <img id="heart" src="static/empty-heart.png" , alt="image" class="favorite" data-favorited="false" />
+        </div>
     </div>
 </body>
 

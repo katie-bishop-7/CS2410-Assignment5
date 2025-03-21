@@ -1,8 +1,9 @@
 :root {
     --background-color: #D1D5DE;
     --darker-background: #B7B6C2;
-    --secondary-color: #8AAA79;
-    --darker-secondary: #728457;
+    --secondary-1: #94b284;
+    --secondary-2: #8AAA79;
+    --secondary-3: #728457;
     --dark-text: #2b3124;
 }
 
@@ -15,16 +16,24 @@ body {
     background-color: var(--background-color);
     font-family: DM_Serif;
     margin: 0px;
+    color: var(--dark-text);
 }
 
 h1 {
-    color: var(--dark-text);
+    
     margin: 0px;
     padding: 12px;
 }
 
+#title {
+    padding-left: 56px;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+}
+
 .banner {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-1);
     text-align: center;
     position: fixed;
     top: 0px;
@@ -34,7 +43,7 @@ h1 {
 }
 
 .banner-buttons {
-    background-color: var(--darker-secondary);
+    background-color: var(--secondary-3);
     display: flex;
     justify-content: space-between;
     padding: 12px, 0px, 12px, 0px, ;
@@ -54,17 +63,17 @@ button {
     text-decoration: none;
 }
 
-/* .link-button {
-    padding: 8px;
-} */
-
 a {
     padding: 18px;
     display: inline-block;
 }
 
 a:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-1);
+}
+
+a[data-on-page=true]{
+    background-color: var(--secondary-2);
 }
 
 .theme-buttons {
@@ -88,4 +97,37 @@ select {
     top: 130px;
     margin: 0px 80px 80px 80px;
     z-index: -1;
+    text-align: center;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#image-div {
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+}
+
+#random {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#heart {
+    position: absolute;
+    right: 36%;
+    bottom: 4%;
+    width: 4%;
+    height: auto;
+}
+
+#heart:hover {
+    right: 35%;
+    bottom: 2%;
+    width: 6%;
+    height: auto;
 }
