@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script source="main.js" defer></script>
     <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
     <title>Favorite Favorites</title>
 </head>
 
@@ -29,6 +29,14 @@
                     <option id="theme-2" value="theme-2">Theme 2</option>
                     <option id="theme-3" value="theme-3">Theme 3</option>
                 </select>
+            </div>
+            <div class="theme-buttons">
+                Select a category:
+                <select id="category">
+                    <option id="category-1" value="1">Wallpaper</option>
+                    <option id="category-2" value="?grayscale">Black and White</option>
+                    <option id="category-3" value="?blur">Blur</option>
+                </select>
 
             </div>
             <div class="navigation-buttons">
@@ -38,7 +46,7 @@
                     </a>
                 </div>
                 <div class="link-button">
-                    <a href="index.html" class="invisible-link">
+                    <a href="gallery.html" class="invisible-link">
                         Gallery
                     </a>
                 </div>
@@ -50,11 +58,21 @@
             <h2>
                 Random Image
             </h2>
-
         </div>
         <div id="image-div">
-            <img id="random" src="static/cake.jpg" , alt="image" />
-            <img id="heart" src="static/empty-heart.png" , alt="image" class="favorite" data-favorited="false" />
+            <img id="random" src="cake.jpg" , alt="image" />
+            <img id="heart" src="empty-heart-glow.png" , alt="image" class="favorite" data-favorited="false" />
+        </div>
+        <div>
+            <button id="regenerate">
+                Regenerate
+            </button>
+        </div>
+        <div id="link-flexbox">
+            <!-- <div>API Link: </div> -->
+            <!-- <div id="api-link" class="picture-links"></div> -->
+            <!-- <div>Image Link: </div> -->
+            <!-- <div id="image-link" class="picture-links"></div> -->
         </div>
     </div>
 </body>

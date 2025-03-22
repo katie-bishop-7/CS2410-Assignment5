@@ -17,6 +17,7 @@ body {
     font-family: DM_Serif;
     margin: 0px;
     color: var(--dark-text);
+    z-index: -5
 }
 
 h1 {
@@ -84,12 +85,19 @@ a[data-on-page=true]{
     gap: 12px;
 }
 
-select {
+select, button{
     background-color: white;
     font-family: DM_Serif;
     padding: 6px;
-    border-radius: 12px;
-    border-color: var(--dark-text);
+    border-radius: 12px; 
+    border-width: 1px;
+    border-color: var(--dark-text); 
+    border-style: none;
+}
+
+#regenerate {
+    padding: 10px;
+    margin: 12px;
 }
 
 #page {
@@ -106,9 +114,23 @@ select {
 }
 
 #image-div {
-    width: 250px;
-    height: 250px;
-    overflow: hidden;
+    position: relative;
+    width: 350px;
+    height: auto;
+}
+
+#image-link {
+    max-width: 350px;
+    overflow:visible;
+}
+
+.picture-links {
+    text-align: left;
+}
+
+.link-flexbox {
+    display: flex;
+    flex-direction: row;
 }
 
 #random {
@@ -119,15 +141,16 @@ select {
 
 #heart {
     position: absolute;
-    right: 36%;
-    bottom: 4%;
-    width: 4%;
+    right: 12px;
+    bottom: 15px;
+    width: 9%;
     height: auto;
+    z-index: 2;
 }
 
 #heart:hover {
-    right: 35%;
-    bottom: 2%;
-    width: 6%;
+    right: 9px;
+    bottom: 12px;
+    width: 10.5%;
     height: auto;
 }
