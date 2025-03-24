@@ -1,1 +1,1 @@
-{"url":"cake.jpg"}
+{"https://fastly.picsum.photos/id/1043/1500/1500.jpg?hmac=kqfj3tFNXJDkzH8UAJ1asjsZ30SCN3-u8GpuxnmUudg":{"api-link":"https://picsum.photos/1500","date-added":"2025-03-24T19:11:00.978Z"},"https://fastly.picsum.photos/id/289/1500/1500.jpg?hmac=G9FvdIGRrGXNzMSKs6BnGj8Pst3FaVfIbAmp_U5qV4s":{"api-link":"https://picsum.photos/1500","date-added":"2025-03-24T19:11:13.397Z"}}

@@ -17,6 +17,7 @@ body {
     font-family: DM_Serif;
     margin: 0px;
     color: var(--dark-text);
+    height: 0px;
 }
 
 h1 {
@@ -101,7 +102,7 @@ select, button{
 
 #page {
     position: relative;
-    top: 130px;
+    top: 150px;
     margin: 0px 80px 80px 80px;
     z-index: -1;
     text-align: center;
@@ -109,7 +110,7 @@ select, button{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 #image-div {
@@ -125,17 +126,50 @@ select, button{
     object-fit: cover;
 }
 
-#heart {
-    position: absolute;
-    right: 12px;
-    bottom: 15px;
-    width: 9%;
+.heart {
+    position: relative;
+    left: 70px;
+    bottom: 90px;
+    width: 30px;
     height: auto;
 }
 
-#heart:hover {
-    right: 9px;
-    bottom: 12px;
-    width: 10.5%;
+.heart:hover {
+    left: 70px;
+    bottom: 93px;
+    width: 35px;
     height: auto;
+}
+
+/* gallery specific */
+
+#gallery {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.gallery_card {
+    background-color: white;
+    height: 300px;
+    width: 180px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.image_gallery_card {
+    width: 180px;
+    height: 180px;
+}
+
+.image-info {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-small;
+    width: 180px;
+    word-wrap: break-word;
+}
+
+.image-div {
+    height: 50px;
 }
