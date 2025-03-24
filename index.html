@@ -35,18 +35,24 @@
                 <select id="category">
                     <option id="category-1" value="1">Wallpaper</option>
                     <option id="category-2" value="?grayscale">Black and White</option>
-                    <option id="category-3" value="?blur">Blur</option>
+                    <option id="category-3" value="?blur=10">Blur</option>
                 </select>
+
+            </div>
+            <div class="theme-buttons">
+                W x H: 
+                <input type="number" value="1500" id="width"/>
+                <input type="number" value="1500" id="height"/>
 
             </div>
             <div class="navigation-buttons">
                 <div class="link-button">
-                    <a href="index.html" class="invisible-link" data-on-page="true">
+                    <div data-on-page="true">
                         Home
-                    </a>
+                    </div>
                 </div>
                 <div class="link-button">
-                    <a href="gallery.html" class="invisible-link">
+                    <a href="gallery.html" class="invisible-link" data-on-page="false">
                         Gallery
                     </a>
                 </div>

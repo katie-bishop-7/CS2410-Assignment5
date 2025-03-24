@@ -4,6 +4,7 @@
     --secondary-1: #94b284;
     --secondary-2: #8AAA79;
     --secondary-3: #728457;
+    --secondary-2-5: #819C70;
     --dark-text: #2b3124;
 }
 
@@ -73,8 +74,14 @@ a:hover {
     background-color: var(--secondary-1);
 }
 
-a[data-on-page=true]{
+a,div[data-on-page=true]{
+    padding: 18px;
     background-color: var(--secondary-2);
+}
+
+a,div[data-on-page=false]{
+    padding: 18px;
+    background-color: var(--secondary-3);
 }
 
 .theme-buttons {
@@ -158,16 +165,27 @@ select, button{
     margin: 20px;
 }
 
+/* .gallery_card:hover {
+    height: 320px;
+    width: 200px;
+} */
+
 .image_gallery_card {
     width: 180px;
     height: 180px;
 }
+
+/* .image_gallery_card:hover {
+    width: 200px;
+    height: 200px;
+} */
 
 .image-info {
     font-family: Arial, Helvetica, sans-serif;
     font-size: x-small;
     width: 180px;
     word-wrap: break-word;
+    text-align: left;
 }
 
 .image-div {

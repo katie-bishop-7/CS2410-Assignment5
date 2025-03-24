@@ -11,8 +11,16 @@ let image_url = fetch_image(api_url).then(url => {
     random_image.alt = "Random image"
     image_link.innerText = url.url
     api_link.innerText = api_url
-}
-)
+    fetch("http://localhost:8000/favs.txt")
+        .then(curr_data => curr_data.json())
+        .then(curr_data_json => {
+            if (curr_data_json[url.url] !== undefined) {
+                heart.src = "filled-heart-glow.png"
+            }
+        })
+})
+
+
 
 // make the heart favorite and unfavorite
 heart.addEventListener("click", e => {
@@ -21,6 +29,21 @@ heart.addEventListener("click", e => {
     if (favorited === "true") { // unfavorited when it was clicked
         heart.setAttribute("data-favorited", "false");
         heart.src = "empty-heart-glow.png"
+
+        fetch("http://localhost:8000/favs.txt")
+            .then(curr_data => curr_data.json())
+            .then(curr_data_json => {
+                delete curr_data_json[document.getElementById("image-link").innerText]
+                return fetch("http://localhost:8000/api/update-favs", {
+                    method: "PUT",
+                    body: JSON.stringify(curr_data_json),
+                    headers: {
+                        "Content-type": "application/json; charset=UTF-8"
+                    }
+                })
+
+            })
+
     }
     else if (favorited === "false") {
         heart.setAttribute("data-favorited", "true");
@@ -31,7 +54,7 @@ heart.addEventListener("click", e => {
             .then(curr_data_json => {
                 curr_data_json[document.getElementById("image-link").innerText] = {
                     "api-link": document.getElementById("api-link").innerText,
-                    "date-added": new Date()
+                    "date-added": new Date().toDateString()
                 }
                 return fetch("http://localhost:8000/api/update-favs", {
                     method: "PUT",
@@ -64,8 +87,15 @@ image_category.addEventListener("change", e => {
 
 function find_api_url() {
     let category = document.getElementById("category").value
-    let WIDTH = 1500;
-    let fetch_url = `https://picsum.photos/${WIDTH}`
+    let width = document.getElementById("width").value;
+    if (width < 0 || width > 3000) {
+        width = 1500;
+    }
+    let height = document.getElementById("height").value;
+    if (height < 0 || height > 3000) {
+        height = 1500;
+    }
+    let fetch_url = `https://picsum.photos/${width}/${height}`
     if (category !== "1") {
         fetch_url += `/${category}`
     }
@@ -91,7 +121,16 @@ function regenerate_image() {
         image_link.innerText = result.url
         regenerate_button.innerText = "Regenerate"
         heart.setAttribute("data-favorited", "false");
-        heart.src = "empty-heart-glow.png"
+
+        fetch("http://localhost:8000/favs.txt")
+            .then(curr_data => curr_data.json())
+            .then(curr_data_json => {
+                if (curr_data_json[result.url] !== undefined) {
+                    heart.src = "filled-heart-glow.png"
+                } else {
+                    heart.src = "empty-heart-glow.png"
+                }
+            })
     },)
     api_link = document.getElementById("api-link")
     image_link = document.getElementById("image-link")

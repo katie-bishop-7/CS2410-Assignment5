@@ -17,7 +17,8 @@ body {
     font-family: DM_Serif;
     margin: 0px;
     color: var(--dark-text);
-    z-index: -5
+    z-index: -5;
+    height: 0px;
 }
 
 h1 {
@@ -55,8 +56,12 @@ h1 {
     justify-content: space-around;
 }
 
-button {
+button, input {
     font-family: DM_Serif;
+}
+
+input {
+    width: 40px;
 }
 
 .invisible-link{
@@ -73,8 +78,14 @@ a:hover {
     background-color: var(--secondary-1);
 }
 
-a[data-on-page=true]{
+a,div[data-on-page=true]{
+    padding: 18px;
     background-color: var(--secondary-2);
+}
+
+a,div[data-on-page=false]{
+    padding: 18px;
+    background-color: var(--secondary-2-5);
 }
 
 .theme-buttons {
@@ -85,7 +96,7 @@ a[data-on-page=true]{
     gap: 12px;
 }
 
-select, button{
+select, button, input{
     background-color: white;
     font-family: DM_Serif;
     padding: 6px;

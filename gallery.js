@@ -1,13 +1,15 @@
-let gallery_cards = document.getElementById("gallery")
+const gallery_cards = document.getElementById("gallery")
 
 fetch("http://localhost:8000/favs.txt")
     .then(res => res.json())
     .then(favs => {
         let heart_counter = 1;
         for (link in favs) {
+            let linkWrap = document.createElement("a")
+            linkWrap.href = "image.html"
+
             let divContainer = document.createElement("div")
             divContainer.className = "gallery_card"
-            
 
             let image = document.createElement("img")
             image.className = "image_gallery_card"
@@ -45,7 +47,6 @@ fetch("http://localhost:8000/favs.txt")
                     .then(curr_data_json => {
                         delete curr_data_json[heart.id]
                         gallery_cards.removeChild(divContainer)
-                        console.log(curr_data_json)
                         return fetch("http://localhost:8000/api/update-favs", {
                             method: "PUT",
                             body: JSON.stringify(curr_data_json),
@@ -53,7 +54,7 @@ fetch("http://localhost:8000/favs.txt")
                                 "Content-type": "application/json; charset=UTF-8"
                             }
                         })
-                        
+
                     })
             }
             )
@@ -66,6 +67,29 @@ fetch("http://localhost:8000/favs.txt")
             divContainer.appendChild(imageDiv)
             divContainer.appendChild(heart)
 
+            divContainer.addEventListener("mouseover", (e) => {
+                e.preventDefault()
+                divContainer.setAttribute("style", "transform: scale(1.05)")
+
+            })
+
+            divContainer.addEventListener("mouseout", (e) => {
+                e.preventDefault()
+                divContainer.setAttribute("style", "transform: scale(1)")
+            })
+
+            divContainer.addEventListener("click", (e) => {
+                e.preventDefault()
+                console.log(e.target)
+                if (e.target.className !== "heart") {
+                    
+                    window.location.href = 
+                    "image.html" 
+                    + "?image_link=" + encodeURIComponent(heart.id) 
+                    + "&api_link=" + favs[heart.id]["api-link"] 
+                    + "&date_added=" + encodeURIComponent(favs[heart.id]["date-added"])
+                }
+            })
             gallery_cards.appendChild(divContainer)
         }
         // create new card. three divs nested inside one div
