@@ -1,4 +1,4 @@
-# Favorite - Multi-Page Web Application
+# Favorite Favorites - Multi-Page Web Application
 
 ## Project Summary
 The **Favorite** project is a web application that allows users to browse randomly selected images, choose their favorites, and view them in a gallery. The app consists of multiple pages, including an image selection page (Home), a gallery of favorited images, and a single image view page. Users can filter their favorites, change themes, and navigate seamlessly between pages. The project leverages **Flexbox for layout**, **local JSON storage**, and **API requests** to fetch images.
