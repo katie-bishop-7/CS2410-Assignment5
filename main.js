@@ -1,8 +1,84 @@
-console.log("Main loaded")
-heart = document.getElementById("heart")
-random_image = document.getElementById("random")
-image_link = document.getElementById("image-link")
-api_link = document.getElementById("api-link")
+let heart = document.getElementById("heart")
+let random_image = document.getElementById("random")
+let image_link = document.getElementById("image-link")
+let api_link = document.getElementById("api-link")
+
+
+// change theme if user changes the theme
+
+const queryString = window.location.search
+let theme;
+if (queryString === ""){
+    theme = "theme-1"
+} else {
+    console.log(queryString)
+    const params = new URLSearchParams(queryString)
+    console.log(params)
+    theme = params.get("theme")
+}
+const theme_category = document.getElementById("theme")
+setTheme(theme)
+const gallery_link = document.getElementById("gallery-link")
+gallery_link.setAttribute("href", `gallery.html?theme=${theme}`)
+
+function setTheme(theme){
+    var r = document.querySelector(':root');
+    if (theme === "theme-1"){
+        r.style.setProperty("--background-color", "#D1D5DE")
+        r.style.setProperty("--secondary-1", "#94b284")
+        r.style.setProperty("--secondary-2", "#8AAA79")
+        r.style.setProperty("--secondary-3", "#728457")
+        r.style.setProperty("--dark-text", "#2b3124")
+        r.style.setProperty("--primary-font", "DMSerif")
+        r.style.setProperty("--secondary-font", "DMSans")
+    }
+    if (theme === "theme-2"){
+        r.style.setProperty("--background-color", "gainsboro")
+        r.style.setProperty("--secondary-1", "cadetblue")
+        r.style.setProperty("--secondary-2", "cornsilk")
+        r.style.setProperty("--secondary-3", "#B5B682")
+        r.style.setProperty("--dark-text", "#1B221D")
+        r.style.setProperty("--primary-font", "Caveat")
+        r.style.setProperty("--secondary-font", "Lexend")
+    } else if (theme === "theme-3"){
+        r.style.setProperty("--background-color", "slategray")
+        r.style.setProperty("--secondary-1", "darkslategrey")
+        r.style.setProperty("--secondary-2", "floralwhite")
+        r.style.setProperty("--secondary-3", "darkseagreen")
+        r.style.setProperty("--dark-text", "#1B221D")
+        r.style.setProperty("--primary-font", "Oswald")
+        r.style.setProperty("--secondary-font", "Roboto")
+    }
+    // update selected theme
+    if (theme === "theme-1"){
+        document.getElementById("theme-1").setAttribute("selected","true")
+    } else if (theme === "theme-2"){
+        document.getElementById("theme-2").setAttribute("selected","true")
+    } else if (theme === "theme-3"){
+        document.getElementById("theme-3").setAttribute("selected","true")
+    }
+}
+
+theme_category.addEventListener("change", (e) =>{
+    e.preventDefault()
+    setTheme(e.target.value)
+    const gallery_link = document.getElementById("gallery-link")
+    gallery_link.setAttribute("href", `gallery.html?theme=${e.target.value}`)
+})
+
+function getCategory(){
+    const category_num = document.getElementById("category").value
+    let category;
+    if (category_num === "1"){
+        category = "Wallpaper"
+    } else if (category_num === "?grayscale"){
+        category = "Black and White"
+    } else if (category_num === "?blur=10"){
+        category = "Blur"
+    }
+    return category
+}
+
 
 // set random image upon loading
 let api_url = find_api_url()
@@ -54,7 +130,8 @@ heart.addEventListener("click", e => {
             .then(curr_data_json => {
                 curr_data_json[document.getElementById("image-link").innerText] = {
                     "api-link": document.getElementById("api-link").innerText,
-                    "date-added": new Date().toDateString()
+                    "date-added": new Date().toDateString(),
+                    "category" : getCategory()
                 }
                 return fetch("http://localhost:8000/api/update-favs", {
                     method: "PUT",

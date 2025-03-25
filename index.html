@@ -9,7 +9,7 @@
     <title>Favorite Favorites</title>
 </head>
 
-<body>
+<body data-theme="theme-1">
     <div class="banner">
         <div id="title">
             <div>
@@ -33,9 +33,9 @@
             <div class="theme-buttons">
                 Select a category:
                 <select id="category">
-                    <option id="category-1" value="1">Wallpaper</option>
-                    <option id="category-2" value="?grayscale">Black and White</option>
-                    <option id="category-3" value="?blur=10">Blur</option>
+                    <option name="Wallpaper" value="1">Wallpaper</option>
+                    <option name="Black and White" value="?grayscale">Black and White</option>
+                    <option name="Blur" value="?blur=10">Blur</option>
                 </select>
 
             </div>
@@ -48,11 +48,11 @@
             <div class="navigation-buttons">
                 <div class="link-button">
                     <div data-on-page="true">
-                        Home
+                        <b>Home</b>
                     </div>
                 </div>
                 <div class="link-button">
-                    <a href="gallery.html" class="invisible-link" data-on-page="false">
+                    <a href="gallery.html" class="invisible-link" data-on-page="false" id="gallery-link">
                         Gallery
                     </a>
                 </div>

@@ -1,20 +1,41 @@
 :root {
     --background-color: #D1D5DE;
-    --darker-background: #B7B6C2;
     --secondary-1: #94b284;
     --secondary-2: #8AAA79;
     --secondary-3: #728457;
     --dark-text: #2b3124;
+    --primary-font: DMSerif;
+    --secondary-font: DMSans;
 }
 
 @font-face {
-    font-family: DM_Serif;
+    font-family: Oswald;
+    src: url(fonts/Oswald/static/Oswald-Regular.ttf);
+}
+@font-face {
+    font-family: Caveat;
+    src: url(fonts/Caveat/static/Caveat-Regular.ttf);
+}
+@font-face {
+    font-family: DMSans;
+    src: url(fonts/DM_Sans/static/DMSans_18pt-Light.ttf);
+}
+@font-face {
+    font-family: Lexend;
+    src: url(fonts/Lexend/static/Lexend-Light.ttf);
+}
+@font-face {
+    font-family: DMSerif;
     src: url(fonts/DM_Serif_Text/DMSerifText-Regular.ttf);
+}
+@font-face {
+    font-family: Roboto;
+    src: url(fonts/Roboto/static/Roboto-Regular.ttf);
 }
 
 body {
     background-color: var(--background-color);
-    font-family: DM_Serif;
+    font-family: var(--primary-font);
     margin: 0px;
     color: var(--dark-text);
     z-index: -5;
@@ -57,7 +78,7 @@ h1 {
 }
 
 button, input {
-    font-family: DM_Serif;
+    font-family: var(--primary-font);
 }
 
 input {
@@ -85,7 +106,7 @@ a,div[data-on-page=true]{
 
 a,div[data-on-page=false]{
     padding: 18px;
-    background-color: var(--secondary-2-5);
+    background-color: var(--secondary-2);
 }
 
 .theme-buttons {
@@ -98,7 +119,7 @@ a,div[data-on-page=false]{
 
 select, button, input{
     background-color: white;
-    font-family: DM_Serif;
+    font-family: var(--primary-font);
     padding: 6px;
     border-radius: 12px; 
     border-width: 1px;
@@ -138,7 +159,7 @@ select, button, input{
 .picture-links {
     justify-content: center;
     text-align: left;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--secondary-font);
     font-size: small;
 
     margin: 12px;
