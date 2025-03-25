@@ -11,9 +11,7 @@ let theme;
 if (queryString === ""){
     theme = "theme-1"
 } else {
-    console.log(queryString)
     const params = new URLSearchParams(queryString)
-    console.log(params)
     theme = params.get("theme")
 }
 const theme_category = document.getElementById("theme")

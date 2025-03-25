@@ -68,11 +68,12 @@ const gallery_cards = document.getElementById("gallery")
 const filter_category = document.getElementById("category")
 let total_cards = [];
 
+// let user filter
+
 filter_category.addEventListener("change", e => {
     e.preventDefault()
     let display_cards = [];
     for (card of total_cards) {
-        console.log(card)
         if (card.value === e.target.value || e.target.value === "None") {
             display_cards.push(card)
         }
@@ -83,7 +84,6 @@ filter_category.addEventListener("change", e => {
             gallery_cards.removeChild(card)
         }
     }
-    console.log(total_cards)
 })
 
 fetch("http://localhost:8000/favs.txt")
@@ -91,6 +91,7 @@ fetch("http://localhost:8000/favs.txt")
     .then(favs => {
         let heart_counter = 1;
         for (link in favs) {
+            // create individual gallery cards
 
             let divContainer = document.createElement("div")
             divContainer.className = "gallery_card"
@@ -129,6 +130,7 @@ fetch("http://localhost:8000/favs.txt")
             heart.src = "filled-heart-glow.png"
             heart.alt = "heart"
 
+            // unfavorite using the heart
             heart.addEventListener("click", (e) => {
                 e.preventDefault()
                 heart.src = "empty-heart-glow.png"
@@ -169,6 +171,7 @@ fetch("http://localhost:8000/favs.txt")
                 divContainer.setAttribute("style", "transform: scale(1)")
             })
 
+            // click the gallery card to see the image page
             divContainer.addEventListener("click", (e) => {
                 e.preventDefault()
                 console.log(e.target)

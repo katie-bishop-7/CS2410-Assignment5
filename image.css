@@ -44,7 +44,6 @@ body {
 }
 
 h1 {
-    
     margin: 0px;
     padding: 12px;
 }
@@ -124,11 +123,6 @@ select, button{
     border-style: none;
 }
 
-#regenerate {
-    padding: 10px;
-    margin: 12px;
-}
-
 #page {
     position: relative;
     top: 130px;
@@ -142,84 +136,7 @@ select, button{
     align-items: center;
 }
 
-#image-div {
-    position: relative;
-    width: 350px;
-    height: auto;
-}
-
-#image-link {
-    max-width: 350px;
-    overflow:visible;
-}
-
-.picture-links {
-    justify-content: center;
-    text-align: left;
-    font-family: var(--secondary-font);
-    font-size: small;
-    margin: 12px;
-}
-
-#api-link {
-    /* height: 100px; */
-    width: 200px;
-    /* min-width: 300px; */
-    overflow: auto;
-    word-wrap: break-word;
-
-}
-
-#image-link {
-    /* height: 300px; */
-    width: 200px;
-    /* min-width: 300px; */
-    overflow: auto;
-    word-wrap: break-word;
-}
-
-#link-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    position: relative;
-    bottom: -150px;
-    left: 0px;
-    margin-left: 30px;
-    margin-bottom: 350px;
-    width: 200px;
-    height: auto;
-}
-
-#random {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-#heart {
-    position: absolute;
-    right: 12px;
-    bottom: 15px;
-    width: 9%;
-    height: auto;
-    z-index: 2;
-}
-
-#heart:hover {
-    right: 9px;
-    bottom: 12px;
-    width: 10.5%;
-    height: auto;
-}
 /* image specific */
-
-/* #image {
-    width: 300px;
-    height: auto;
-    margin: 50px;
-} */
 
 #information-container {
     display: flex;

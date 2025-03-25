@@ -122,11 +122,6 @@ select, button{
     border-style: none;
 }
 
-#regenerate {
-    padding: 10px;
-    margin: 12px;
-}
-
 #page {
     position: relative;
     top: 150px;
@@ -138,19 +133,6 @@ select, button{
     justify-content: center;
     flex-direction: column;
     align-items: flex-start;
-}
-
-#image-div {
-    position: relative;
-    width: 350px;
-    height: auto;
-
-}
-
-#random {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
 }
 
 .heart {
@@ -185,20 +167,10 @@ select, button{
     margin: 20px;
 }
 
-/* .gallery_card:hover {
-    height: 320px;
-    width: 200px;
-} */
-
 .image_gallery_card {
     width: 180px;
     height: 180px;
 }
-
-/* .image_gallery_card:hover {
-    width: 200px;
-    height: 200px;
-} */
 
 .image-info {
     font-family: var(--secondary-font);
